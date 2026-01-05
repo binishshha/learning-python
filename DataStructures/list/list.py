@@ -1,4 +1,4 @@
-#list is a built-in, ordered/indexed and changeable collection on items that allows duplicate members and can contain any datatype
+#list is a built-in, ordered/indexed and changeable/mutable collection on items that allows duplicate members and can contain any datatype
 a=['x', '2.11111', 1.2, 2j+1]
 print(a)
 
