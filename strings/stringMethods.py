@@ -21,11 +21,11 @@ print(message.find('h'))
 #searches a in between 2nd and 5th index, not found so returns -1
 print(message.find("h",2,5))
 
-#TASK 1: Find position of first "a"
+#-------TASK 1: Find position of first "a"
 inp = input("Enter a string: ")
 print(inp.find("a"))
 
-# #TASK 2: Masking email address
+#--------TASK 2: Masking email address
 email = input("Enter an email address: ")
 symbol = email.find("@")
 username = email[:symbol]

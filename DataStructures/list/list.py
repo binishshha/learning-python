@@ -23,4 +23,3 @@ print(len(fruits)) #indexing changes too
 fruits[1:3]=['strawberry','avocado','berries','pineapple']
 print(fruits)
 print(len(fruits))
-
