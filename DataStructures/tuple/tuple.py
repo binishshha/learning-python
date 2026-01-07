@@ -1,4 +1,5 @@
 #tuples are ordered, duplicable but immutable built-in data sructures i.e elements cannot be modified
+#elments cannot be added or removed in it
 gradeTuple= ('C','D','A','A','B','B','A', 100)
 print(gradeTuple)
 # gradeTuple[1]=10000 cannot be modified
