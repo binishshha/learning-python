@@ -12,8 +12,10 @@ print(f"class 1 is disjoint of class 3: {class1.isdisjoint(class3)}")
 #.issubset checks if any two set have intersecting values
 print(f"class 1 is subset of class 2: {class1.issubset(class2)}")
 print(f"class 1 is subset of class 3: {class1.issubset(class3)}")
+#can use <= operator too
 
 #.issuperset() checks if the set lies within a set
 class4 = {'sita', 'gita'}
 print(f"class 4 is superset of class 2: {class2.issuperset(class4)}")
 #all item in class2 lies in class4 and class4 is it's superset
+#can use >= operator too
