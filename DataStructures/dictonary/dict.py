@@ -9,11 +9,6 @@ subjects = {
     "code": "CSC200",
     "is_fun": True,
     "batch": 2081, #repeated key 
-    "students_marks": #dictonary within a dictonary i.e nested dictonary
-    {
-        "Ram": 99,
-        "shyam":44
-    }
 }
 
 #------accessing method------
@@ -26,8 +21,6 @@ print(subjects.get("name"))
 print(subjects.get("hairr"))#returns None
 # print(subjects["hairr"]) #gives error
 
-print(subjects["students_marks"])
-print(subjects["students_marks"]["Ram"])
 print(list(subjects.keys())) #returns all key names
 print(list(subjects.values())) #return all values
 print(subjects.items()) #returns list of key value pair
