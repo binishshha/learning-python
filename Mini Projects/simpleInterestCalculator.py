@@ -7,4 +7,4 @@ r=float(input("Enter the rate of interest:"))
 t=float(input("Enter the time in years:"))
 result=simpleInterest(p,r,t)
 print(f"""the simpleinterest calulated for:\nprincipal amount:{p}\nrate of interest:{r}\ntime(in years):{t}
-      Hence, simple interest is:{result}""") #used triple quote to allow line breaking
+Hence, simple interest is:{result}""") #used triple quote to allow line breaking
