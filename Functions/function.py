@@ -30,10 +30,17 @@ print(sum([1,2,3],[2,3,4])) #cocncatenates a list
 def sum(a:int=0, b:int=0): #a default parameter never follows a non default parameter so the optional parameter should always be the last one
     summ=a+b
     return summ
-print(sum()) #we cannot pass an empty function call if parameters are defined and default parameter values are set
+print(sum()) #we cannot pass an empty function call if parameters are defined and default parameter values are not set
 print(sum(2))
 
 # if you dont define parameter type then we can just add default values as def sum(a=0,b=1)
+
+
+#------------ARGUMENTS-------------
+
+#---------positional arguments---------
+#defined in order of the parameters placed
+sum(1,2) #where 1 is for number1 and 2 is for number2
 
 #---------------keyword arguments(kwargs)------
 #defining keywrod args in function call lets you define the value of variables in a call itself
@@ -42,7 +49,7 @@ print(sum(2))
 print(sum(b=10))
 print(sum(a=1,b=10))
 
-#--------------arbitary arguments-----------
+#--------------arbitary positional arguments-----------
 #they are used when the number of positional arguments you want to define is not fixed
 #stores value as a tuple
 def colors(*args):
@@ -50,7 +57,7 @@ def colors(*args):
         print(items.upper()) #its a tuple
         
 colors("red","blue")
-colors("red","blue",1100)
+colors("red","blue","yellow") #you can pass any datatype int, float etc together
 colors()
 
 #--------arbitary keyword arguments---------
@@ -62,3 +69,7 @@ def colors(**kwargs):
         
 colors(name="blue",shade1="yellow",shade2="green")
 colors()
+
+#-----USE
+#functiuon allows you to write reusable block of code which improves codes' maintainability
+#holds encapsulation property as it is defined with scope
