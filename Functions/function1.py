@@ -100,3 +100,50 @@ print(result)
 #it allows you to execute an empty function without writing a block of code in it without causing error
 def add(a,b):
     pass
+
+#-----------------return types----------
+#refers to the type of value that a function will return when it stops executing
+#we can explicityly define the tyoes of value a function will return using type hints or type annotations(optional)
+
+#syntax for return type:
+# def functionName(param1,...) -> type:
+#     ...........
+#     return valueofType
+
+#types of return types
+
+# def sum1(a, b) -> float: #---basic return types(int,float,string)--------
+def sum1(a,b) -> None: #-----None return type(returns nothing---------
+    result=a+b
+    return result
+
+result1=sum1(1.1,5)
+print(f"adding:{result1}")
+
+def value() -> tuple[int,int]: #-------multiple values type------------
+                               #you can specify the kind of data type you can use inside datastructure
+    return 10,20
+
+print(F"values:{type(value())}") #tuple by default  too
+print(F"values:{type(value().index(20))}") #class int
+
+from typing import Union
+def function(x:bool) -> Union[int,str]: #---union---- lets you specify data type for same paramenter
+    if True:
+        return "hi"
+    else:
+        return 000
+    
+print(function(True))
+
+#-------callable function---------
+#calls a function as a return type
+def multiplier(x):
+    def multiply(y):
+        return x*y
+    return multiply
+
+multiplyBy=multiplier(3) #calls multiplier with x=3 and returns multiply function
+#multiplyBy holds the multipply function and value for x=3 and when multiplyBy is called with y's value it executes inner loop
+#the return type of multiplier is multiply
+print(multiplyBy(10))
