@@ -9,31 +9,37 @@
 # 1. transaction history
 # 2. support multiple accounts
 # 3. account lookup
+# 4. Encapsulate i.e. make balance key private
 
+#in this class the setter method of encapsulation is deposit, withdraw and the getter method is check_balance
 class BankAccount:
     def __init__(self,account_holder,balance):
         self.account_holder=account_holder
-        self.balance=balance
+        # self.balance=balance
+        #using balance as a public key that can be accessed from anywhere in a program is a risky method
+        # it can be changed to anything 
+        # so converting it to private key usind a double underscore__
+        self.__balance=balance
         self.transactions=[]
 
     def deposit(self,amount):
         if amount>0:
-          self.balance += amount
+          self.__balance += amount
           self.transactions.append(f"{amount} deposited")
-          print(f"the new amount after deposition of {amount} : {self.balance}")
+          print(f"the new amount after deposition of {amount} : {self.__balance}")
         else:
             print("not enough amount to deposit")
 
     def withdraw(self,amount):
-        if self.balance>=amount:
-          self.balance -= amount
+        if self.__balance>=amount:
+          self.__balance -= amount
           self.transactions.append(f"{amount} withdrawn")
-          print(f"the new amount after deposition of {amount} : {self.balance}")
+          print(f"the new amount after deposition of {amount} : {self.__balance}")
         else:
             print(f"not enough balance to withdraw")
 
     def check_balance(self):
-        print(f"{self.account_holder} has {self.balance} in their account")
+        print(f"{self.account_holder} has {self.__balance} in their account")
 
     def show_transactions(self): #ENHANCED FEATURE
         print(f"transaction history for {self.account_holder}")
@@ -81,6 +87,13 @@ while True:
     elif choice in {'2','3','4','5'}:
         name= input("Enter account holder's name:")
         bankacc1=banksys1.get_accounts(name) #account ko sabai info paucha ani as an object class BankAccount lai pass garcha
+        
+        bankacc1.balance=-2000 #bankacc1.accountholder will have -2000 in their account if i perform action number 4 because balance can be changed from anywhere
+        #as soon as we mad ekey private this wont work
+
+        bankacc1.__balance=-100 #using this wont be of any use too
+        #this is not raising any eeror even while trying to access it using private key 
+        # because __balance attribute is immediately created and python sees it as a new attr not modification of its private key attribute
 
         if not bankacc1:
             continue
