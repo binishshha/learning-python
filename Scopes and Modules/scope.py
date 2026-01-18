@@ -56,4 +56,4 @@ def outer_function():
     # so we use nonlocal keyword and make a=111 a nonlocal variable
 
 outer_function()
-print(a)
+print(a) #because a is a global vraible so it prints global a's value i.e. 1
