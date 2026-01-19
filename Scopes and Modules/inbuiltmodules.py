@@ -59,3 +59,40 @@ formatted2=date2.strftime("%d day, %m month, %y year or %Y year, and %H hours, %
 print(f"after fromatting datetime object  to string :\n{formatted2}")
 print(f"type after formatting date2: {type(formatted2)}")  #<class 'str'>
 
+#-----------using arithmetic operations on datetime module-------
+# we can use timedelta() to specify duration only
+
+# datetime-timedelta -> datetime
+# datetime+timedelta -> datetime
+# datetime-datetime -> timedelta
+
+datenow=dt.datetime.now()
+
+dateafter=datenow+dt.timedelta(days=5, hours=2)
+print(f"current datetime:{datenow}")
+print(f"date after 5days and 2 hours:{dateafter}")
+
+birthdate=dt.datetime(2006,9,11)
+
+time_diff=datenow-birthdate
+print(f"time difference between {datenow} and {birthdate} : {time_diff}")
+# we can convert the time difference into years
+age=time_diff.days/365
+print(f"Current age: {age}")
+
+#-----timezone-------
+# represents how far is the time from utc
+
+current_time=dt.datetime.now(dt.timezone.utc)
+print(f"UTC time currently: {current_time}")
+
+#time that is 5 hours ahead of utc
+fiveutc=dt.timezone(dt.timedelta(hours=5))
+# print(fiveutc) #just prints the difference in utc time
+time=dt.datetime.now(fiveutc)
+print(time)
+
+#NEPAL TIME
+nepaltime=dt.datetime.now(dt.timezone(dt.timedelta(hours=5 , minutes=45)))
+print(f"Nepal time as per utc time: {nepaltime}")
+
